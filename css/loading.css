@@ -1,0 +1,371 @@
+html,body{
+height: 100%;
+background: #383838;
+}
+
+.wrap{
+	max-width: 640px;
+	height: 1041px;
+	width: 100%;
+	/*height: 100%;*/
+	margin:0 auto;
+	position: relative;
+	overflow: hidden;
+}
+#wrap .infomation{
+	width: 62.993%;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin-left: -31.4965%;
+
+}
+ .infomation input{
+	display: block;
+	color:rgb(211,224,255);
+	background-color: transparent;
+	font-size: 1.6rem;
+	outline: none;
+	border:none;
+	width: 62%;
+	margin: 0 auto;
+	border-bottom: 1px dashed #FFF;
+	text-align: center;
+	line-height: 1.5;
+}
+.loading{
+	background: url("../Images/page_load_bg.png") no-repeat 0,0;
+	background-size: 100% 100%;
+}
+.loading img{
+	position: absolute;
+	left:50%;
+	top:50%;
+}
+.Hpic{
+	width: 45.15625%;
+	margin-left: -22.578125%;
+	margin-top: -22.578125%;
+}
+.textPic{
+	width: 60.9375%;
+	margin-left:-30.46875%;
+	margin-top:-30.46875%;
+	-webkit-animation: loading 6s linear infinite;
+}
+
+/*loading动画*/
+@-webkit-keyframes loading{
+	0%{
+		-webkit-transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform: rotate(-360deg);
+	}
+}
+/***description****/
+.description{
+	background: url("../Images/page_description_bg.png") no-repeat 0,0;
+    background-size:100% 100%;
+}
+.description_text{
+	height: 462px;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin-top: -231px;
+}
+/*文字出现属性*/
+.description .description_text pre{
+	position: relative;
+	color:white;
+	text-align: center;
+	font-size: 2.5rem;
+	line-height: 1.54;
+	margin-left: -167.508px;
+	height: 0;
+	overflow: hidden;
+	-webkit-animation: desText 10s linear forwards;
+	z-index: 2;
+	-webkit-transition: opacity .5s linear;
+}
+/*流星出现位置*/
+.description .meteor1{
+	position: absolute;
+	left:16.40625%;
+	margin-top:31.71875%;
+	width: 15.625%;
+	z-index: 1;
+}
+.description .meteor2{
+	position: absolute;
+	left:51.40625%;
+	margin-top:130.625%;
+	width: 8.125%;
+}
+.description .meteor3{
+	position: absolute;
+	left:66.5625%;
+	margin-top:35.625%;
+	width: 12.1875%;
+	z-index: 2;
+}
+.description .meteor4{
+	position: absolute;
+	left:-15.46875%;
+	margin-top:135.625%;
+	width: 15.46875%;
+	z-index: 2;
+}
+/*流星的动画效果*/
+.animateMtr1{
+	-webkit-animation: meteor1 5s linear infinite 4s;
+}
+.animateMtr2{
+	-webkit-animation: meteor2 5s linear infinite 4s;
+}
+.animateMtr3{
+	-webkit-animation: meteor3 5s linear infinite 4s;
+}
+.animateMtr4{
+	-webkit-animation: meteorflying4 4s ease forwards;
+}
+.meteorflying1{
+	-webkit-animation: meteorflying1 2s ease-in-out forwards;
+}
+.meteorflying4{
+	-webkit-animation: meteor4 5s linear infinite;
+}
+.meteorFlyAfter1{
+	-webkit-animation: meteorFlyAfter1 5s linear infinite ;
+}
+/*徐峥出现的位置*/
+.description .superman{
+	position: absolute;
+	top:60%;
+	left: 141%;
+	width: 80.46875%;
+	margin-left: -40.234375%;
+	margin-top: -31.1718749375%;
+	z-index: 6;
+
+}
+.animateSuperman{
+	-webkit-animation: superFlying 5s linear forwards;
+}
+
+
+/*响应式部分*/
+@media screen and (max-width: 640px){
+	.wrap{
+		height: 100%;
+	}
+}
+@media screen and (max-width: 414px){
+	.description .description_text{
+		height: 288px;
+		margin-top: -144px;
+	}
+	#wrap .description_text pre{
+		font-size: 1.6rem;
+		margin-left: -107px;
+	}
+ 	.description .description_tips{
+ 		font-size: 1.6rem;
+ 	}
+ 	#wrap .game_time{
+ 		font-size: 2.51569rem;
+ 	}
+ 	#wrap .reward_title{
+ 		font-size: 1rem;
+ 	}
+ 	#wrap button{
+ 		font-size:2rem;
+ 	}
+ 	#wrap .infomation input{
+ 		font-size: 1.4rem;
+ 	}
+}
+@media screen and (max-width: 320px){
+	.description .description_text{
+		height: 240px;
+		margin-top: -120px;
+	}
+	#wrap .description_text pre{
+		font-size: 1.25rem;
+		margin-left: -83.758px;
+	}
+	.description .description_tips{
+ 		font-size: 1.25rem;
+ 	}
+ 	#wrap .game_time{
+ 		font-size: 1.9445rem;
+ 	}
+ 	#wrap button{
+ 		font-size:1.6rem;
+ 	} 
+ 	 #wrap .infomation input{
+ 		font-size: 0.8rem;
+
+ 	}	
+}
+
+/**********************************手机选出出现页面************************/
+.description .whole_moble,.description .split_moble{
+	position: absolute;
+	left: 50%;
+	top:50%;
+	width: 30%;
+	margin-top: -30.625%;
+	margin-left: -15%;
+	opacity: 0;
+	-webkit-transition: opacity 2s ease-in;
+	z-index: 5;
+}
+.description .whole_moble{
+	-webkit-transform: scale(0) rotate(0deg);
+
+}
+
+
+.mobileRotate{
+	-webkit-animation: mobileRotate 1.5s linear forwards;
+}
+#wrap .mobileFadeOut{
+	-webkit-transform: scale(1) rotate(0deg);
+	-webkit-animation: mobileFadeOut 2s linear ;
+}
+
+.frage{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	/*opacity: 0;*/
+	z-index: 10;
+}
+.frage1{
+	width: 19.84375%;
+	margin-left: -9.921875%;
+	margin-top: -13.4375%;
+	-webkit-animation: frage1 1.25s linear forwards;
+	-webkit-transform: scale(1);
+
+}
+.frage2{
+	width: 15%;
+	margin-left: -7.5%;
+	margin-top: -10.23437%;
+
+	-webkit-animation: frage2 1.25s linear forwards;
+}
+.frage3{
+	width: 19.84375%;
+	margin-left: -9.921875%;
+	margin-top: -9.765625%;
+
+	-webkit-animation: frage3 1.25s linear forwards;
+}
+.frage4{
+	width: 17.96875%;
+	margin-left: -8.984375%;
+	margin-top: -10.25957%;
+	-webkit-animation: frage4 1.25s linear forwards;
+}
+
+.frage5{
+	width: 8.59375%;
+	margin-left: -4.296875%;
+	margin-top: -7.890625%;
+	-webkit-animation: frage5 1.25s linear forwards;	
+}
+.frage6{
+	width: 11.71875%;
+	margin-left: -5.859375%;
+	margin-top: -7.03125%;
+	-webkit-animation: frage6 1.25s linear forwards;	
+}
+.frage7{
+	width: 16.25%;
+	margin-left: -8.125%;
+	margin-top: -8.046875%;
+	-webkit-animation: frage7 1.25s linear forwards;	
+}
+.frage8{
+	width: 16.71875%;
+	margin-left: -8.359375%;
+	margin-top: -6.171875%;
+	-webkit-animation: frage8 1.25s linear forwards;		
+}
+/***************八块星星***********/
+.star{
+	position: absolute;
+}
+.star1{
+	margin-top: 53.4375%;
+	left: 11.875%;
+	width: 11.875%;
+	-webkit-animation: star1 7s linear infinite;
+}
+.star2{
+	margin-top: 35.625%;
+	left: 45.15625%;
+	width: 11.875%;
+	-webkit-animation: star2 7s linear infinite;
+}
+.star3{
+	margin-top: 46.25%;
+	left: 78.75%;
+	width: 7.34375%;
+	-webkit-animation: star3 7s linear infinite;
+}
+.star4{
+	margin-top: 59.0625%;
+	left: 50.79375%;
+	width: 7.8125%;
+	-webkit-animation: star4 7s linear infinite;
+}
+.star5{
+	margin-top: 61.5625%;
+	left: 77.65625%;
+	width: 12.1875%;
+	-webkit-animation: star5 7s linear infinite;
+}
+.star6{
+	margin-top: 85.78125%;
+	left: 12.65625%;
+	width: 12.65625%;
+	-webkit-animation: star6 7s linear infinite;	
+}
+.star7{
+	margin-top: 106.5625%;
+	left: 40.15625%;
+	width: 8.28125%;
+	-webkit-animation: star7 7s linear infinite;	
+}
+.star8{
+	margin-top: 96.40625%;
+	left: 70.3125%;
+	width: 16.71875%;
+	-webkit-animation: star8 7s linear infinite;	
+}
+
+/*****************************************下方提示性文字********************************************/
+ .description_tips{
+ 	position: absolute;
+	color:#FFF;
+	font-size:2.5rem;
+	width: 100%;
+	text-align: center;
+	line-height: 1;
+	top:84.44668%;
+	display: none;
+}
+.description .descirption_arrow{
+	position: absolute;
+	top:91.0662824%;
+	width: 6.71875%;
+	left: 50%;
+	margin-left: -3.59375%;
+	display: none;
+}
+

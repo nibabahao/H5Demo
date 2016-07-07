@@ -1,0 +1,174 @@
+.game{
+	background: url("../Images/page_gameBg.png") no-repeat 0,0;
+	background-size: 100% 100%;
+}
+.game header {
+	text-align: center;
+	margin-top: 8.65625%;
+}
+.game header img{
+	width: 36.5625%;
+}
+.game .game_content{
+	margin-top: -126.5625%;
+	position: relative;
+	text-align: center;
+	-webkit-animation:game_content 1s linear forwards .5s;
+	z-index: 5;
+}
+.game .game_content .container{
+	width: 97.40625%;
+}
+.game_block{
+	position: absolute;
+	top:50%;
+	width: 100%;
+	text-align: center;
+}
+.game .game_time{
+	font-size: 38.89px;
+	color:#e30a20;
+	position: absolute;
+	left: 0;
+	top:0;
+	text-align: center;
+	width: 100%;
+}
+/*弹出框*/
+.game .game_alert{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	width: 65.15625%;
+	margin-left: -32.578125%;
+	margin-top: -36.484375%;
+	z-index: 8;
+	background-color:rgba(46,178,219,0.5);
+}
+/******第一关头像的样式******/
+.game_block1{
+	margin-top: -34.64875%;
+}
+.game_block1 img{
+	width: 33.75%;
+}
+.game1_star0{
+	position: absolute;
+	width: 11.71875%;
+	top:80%;
+	left: 10%;
+}
+.game1_star1{
+	position: absolute;
+	width: 10.78125%;
+	top:80%;
+	left: 80%;
+}
+.game .str0_animate{
+	-webkit-animation:game_star0 7s linear infinite;
+}
+.game .str1_animate{
+	-webkit-animation:game_star1 7s linear infinite;
+}
+/******第二关头像的样式******/
+.game_block2{
+	margin-top: -40.59375%;
+}
+.game_block2 img{
+	width: 27.34375%;
+}
+.game2_star0{
+	position: absolute;
+	width: 11.09375%;
+	top:80%;
+	left: 10%;
+}
+/******第三关头像的样式******/
+.game_block3{
+	margin-top: -44.5%;
+}
+.game_block3 img{
+	width: 22.03125%;
+}
+.game3_star0{
+	position: absolute;
+	width: 15.15625%;
+	top:80%;
+	left: 10%;
+}
+/******第四关头像的样式******/
+.game_block4{
+	margin-top: -44.33333%;
+}
+.game_block4 img{
+	width: 17.0%;
+}
+.game4_star0{
+	position: absolute;
+	width: 15.15625%;
+	top:80%;
+	left: 10%;
+}
+/******第五关头像的样式******/
+.game_block4 img{
+	width: 17.0%;
+}
+.game5_star0{
+	position: absolute;
+	width: 10.4004017%;
+	top:80%;
+	left: 10%;
+}
+/******第六关头像的样式******/
+.game_block6{
+	margin-top: -44.8333%;
+}
+.game_block6 img{
+	width: 14.3%;
+}
+.game6_star0{
+	position: absolute;
+	width: 15.15625%;
+	top:80%;
+	left: 10%;
+}
+/******第七关头像的样式******/
+.game_block7{
+	margin-top: -46.5333%;
+}
+.game_block7 img{
+	width: 12.505%;
+}
+@media screen and(max-width: 414){
+	#wrap .game_block7{
+	margin-top: -45.0333%;
+	}
+}
+.game7_star0{
+	position: absolute;
+	width: 12.65625%;
+	top:80%;
+	left: 10%;
+}
+/******第八关头像的样式******/
+.game_block8{
+	width: 89.06666%;
+	left: 50%;
+	margin-left:-44.53333%; 
+	margin-top: -44.5333%;
+	overflow: hidden;
+}
+.game_block8 img{
+	width: 11.5%;
+}
+@media screen and(max-width: 414){
+	#wrap .game_block7{
+	margin-top: -45.0333%;
+	}
+}
+.game8_star0{
+	position: absolute;
+	width: 12.65625%;
+	top:80%;
+	left: 10%;
+}

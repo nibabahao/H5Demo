@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+	html,body{
+		overflow: hidden;
+		height: 100%;
+	}
+		#box{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			background-color:red;
+		}
+		#box2{
+			width: 200px;
+			height: 300px;
+			position: absolute;
+			background-color:pink;
+		}		
+		#box3{
+			width: 300px;
+			height: 200px;
+			position: absolute;
+			background-color:purple;
+		}		
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/TweenMax.min.js"></script>
+	<script type="text/javascript">
+		// TweenLite.to($("#block"), 2, {backgroundColor:"#ff0000", width:"50%", top:"100px", ease:Power2.linear}); 
+		// // TweenLite.to($("#block"), 2, {boxShadow:"0px 0px 20px red", color:"#FC0"});
+		// var tl = new TimelineLite();
+		// // Sequence multiple tweens
+		// tl.to($("#block"), 1, {x:50,y:0}) .to($("#block"), 1, {x:50,y:50}) .to($("#block"), 1, {x:-50,y:50}) .to($("#block"), 1, {x:-50,y:0});
+		// var tween = TweenLite.from($("#box"),2,{
+		// 	margin:$("body").width()*0.534375,//水平移动的方向translateX
+		// 	y:100,
+		// 	background:"blue",
+		// 	scale:0.2,
+		// 	rotation:360,
+		// 	ease:Power4.easeInOut,
+		// 	onComplete:function(h){
+		// 		console.log(h);
+		// 	},
+		// 	onCompleteParams:["1233"]//动画完成后回调函数的参数
+		// });
+		// TweenLite.to($("#box"),2,{y:100,delay:2});
+
+		// TweenLite.fromTo(
+		// 	$("#box"),
+		// 	5,
+		// 	{	
+		// 		x:$("body").width()+100,
+		// 		y:$("body").height()/2-50
+		// 	},
+		// 	{	
+		// 		x:$("body").width()/2-50,
+		// 		y:$("body").height()/2-50
+
+		// 	}
+		// );
+		// TweenLite.to(
+		// 	$("#box"),
+		// 	2,
+		// 	{	delay:7,
+		// 		x:-100,
+		// 		y:$("body").height()/2
+		// 	}		
+		// )
+
+
+		//tween.reverse();//从当前状态恢复到初始状态
+		//tween.pause();//动画暂停
+		//tween.play();//动画开始里面可以方参数时间从运动时间里多少秒开始
+
+		var tl=new TimelineLite();//创建一个时间轴的实例
+
+		// tl.to($("#box"),2,{
+		// 	x:100
+		// }).to($("#box"),2,{
+		// 	y:100
+		// }).to($("#box"),6,{
+		// 	x:200,
+		// 	backgroundColor:"blue"
+		// })
+		// tl.to($("#box"),2,{
+		// 	x:600
+		// }).to($("#box2"),3,{y:100,x:200},"-=2").to($("#box3"),5,{x:800,y:80},"-=5");//提前0.7秒运动，可以利用来其使同时运行
+
+		// tl.to($("#box"),2,{rotation:270,x:400}).to($("#box2"),2,{x:200,y:100},"-=2").to($("#box3"),2,{x:500,y:600},"-=2");
+
+		var t1=new TweenMax({
+			repeat:-1,//一直循环 -1
+			yoyo:true //A-B-A-B
+		});
+		tl.staggerTo(".box",1,{
+			y:200,
+			rotation:360
+		},0.6);
+		// 时间间隔
+	</script>
+</body>
+</html>

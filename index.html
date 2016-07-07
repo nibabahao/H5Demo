@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/loading.css">
+	<link rel="stylesheet" type="text/css" href="css/description_animate.css">
+	<link rel="stylesheet" type="text/css" href="css/star_animatie.css">
+	<link rel="stylesheet" type="text/css" href="css/game.css">
+	<link rel="stylesheet" type="text/css" href="css/gameAnimate.css">
+	<link rel="stylesheet" type="text/css" href="css/reward.css">
+	<title>Document</title>
+</head>
+<body>
+	<section id="wrap" class="wrap loading">
+			<img src="Images/page_load_xufeng1.png" alt="" class="Hpic">
+			<img src="Images/page_load_text.png" alt="" class="textPic">
+	</section>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/game1.js"></script>
+	<script type="text/javascript">
+	 //第一页的所用图片资源
+	 var pageFirstArr=["Images/page_load_xufeng1.png","Images/page_load_text.png","Images/page_load_bg.png","Images/page_description_bg.png","Images/page_description_meteor1.png","Images/page_description_meteor2.png","Images/page_description_meteor3.png","Images/page_description_meteor4.png","Images/page_description_xuzheng.png","Images/page_description_xuzheng1.png","Images/page_description_mobile1.png","Images/page_description_mobile0.png","Images/fpage_ragement0.png","Images/fpage_ragement1.png","Images/fpage_ragement2.png","Images/fpage_ragement3.png","Images/fpage_ragement4.png","Images/fpage_ragement5.png","Images/fpage_ragement7.png","Images/page_start0.png","Images/page_start1.png","Images/page_start2.png","Images/page_start3.png","Images/page_start4.png","Images/page_start5.png","Images/page_start6.png","Images/page_start7.png","Images/page_arrowUp.png","Images/page_gameBg.png","Images/page_game1_title.png","Images/page_gameHead1.png","Images/page_gameHead.png","Images/page_game1_star.png","Images/page_game1_star1.png","Images/page_game1_alert.png","Images/page_game2_star1.png","Images/page_game2_title.png","Images/page_game2_alert.png","Images/page_game3_title.png","Images/page_game3_star1.png","Images/page_game3_alert.png","Images/page_game4_star1.png","Images/page_game4_title.png","Images/page_game4_alert.png","Images/page_game5_title.png","Images/page_gameHead2.png","Images/page_game5_star1.png","Images/page_game5_star2.png","Images/page_game5_alert.png","Images/page_game6_title.png","Images/page_game6_star1.png","Images/page_game6_star2.png","Images/page_game6_alert.png","Images/page_game7_title.png","Images/page_game7_star1.png","Images/page_game7_star2.png","Images/page_game7_star3.png","Images/page_game7_alert.png","Images/page_game8_title.png","Images/page_game8_star1.png","Images/page_game8_star2.png","Images/page_game8_alert.png","Images/page_game3_star2.png","Images/page_reward_mobile2.png","Images/page_reward_feeback.png","Images/page_reward_feeback1.png","Images/page_reward_feeback2.png","Images/page_reward_feeback3.png"];
+
+	 
+	  // 图片预加载
+	 function imgLoad(){
+	 	var srcSum=0;
+	 	for(var i=0;i<pageFirstArr.length;i++){
+	 		var img=new Image();
+	 		img.src=pageFirstArr[i];
+	 		img.onload=function(){
+	 			srcSum++;
+	 			if(srcSum==pageFirstArr.length){
+	 				$(".Hpic").remove();
+	 				$(".textPic").remove();
+	 				$(".wrap").removeClass("loading").addClass("description");
+	 				createEle();
+	 				//10秒后文字全部出现所有元素动画构建
+	 				setTimeout(function(){
+	 					$(".description_text pre").css({
+	 						"opacity":0
+	 					});
+	 					$(".meteor1").removeClass("animateMtr1").addClass("meteorflying1");
+	 					$(".meteor4").addClass("animateMtr4");
+	 					$(".superman").addClass("animateSuperman");
+	 					animateSuperman();
+	 					//流星1飞行完后2S切换动画
+	 					setTimeout(function(){
+	 						$(".meteor1").removeClass("meteorflying1").addClass("meteorFlyAfter1");
+	 					},2000);
+	 					//流星4秒飞行完后切换动画
+	 					setTimeout(function(){
+	 						$(".meteor4").removeClass("animateMtr4").addClass("meteorflying4");
+	 					},4000);
+	 					//10.5s秒代文字的淡出效果消失删除
+	 					setTimeout(function(){
+	 						$(".description_text").remove();
+	 					},10500);
+	 				},10000);
+	 				//15.5s秒后超人徐峥飞出屏幕后删除然后手机紧接出来
+	 				setTimeout(function(){
+	 					$(".superman").remove();
+	 						$wholeMobile=$('<img src="Images/page_description_mobile0.png" class="whole_moble mobileRotate">');
+	 						$(".wrap").append($wholeMobile);
+	 						//1.5s旋转完毕后生成第二张手机图片且其他元素消失
+	 						setTimeout(function(){
+	 							$(".meteor1").fadeOut(function(){$(this).remove()});
+	 							$(".meteor2").fadeOut(function(){$(this).remove()});
+	 							$(".meteor3").fadeOut(function(){$(this).remove()});
+	 							$(".meteor4").fadeOut(function(){$(this).remove()});
+	 							$splitMobile=$('<img src="Images/page_description_mobile1.png" class="split_moble">');
+	 							$(".wrap").append($splitMobile);
+	 								//延时.5s出现过渡效果
+	 								setTimeout(function(){
+	 									$splitMobile.css({"opacity":1});
+	 									//延时.5s外层消失过渡
+	 										setTimeout(function(){
+	 											$wholeMobile.removeClass("mobileRotate").addClass("mobileFadeOut");
+	 											setTimeout(function(){
+	 												$splitMobile.hide();
+	 												//生成8块碎片
+	 												for(var i=0;i<8;i++){
+	 													$img=$('<img src="Images/fpage_ragement'+i+'.png" alt="" class="frage frage'+(i+1)+'">');
+	 													$(".wrap").append($img);
+	 												}
+	 												//生成8个星球
+	 												for(var j=0;j<8;j++){
+	 													$img=$('<img src="Images/page_start'+j+'.png" alt="" class="star star'+(j+1)+'">');
+	 													$(".wrap").append($img);	 												
+	 												}
+	 													setTimeout(function(){
+	 														$p=$('<p class="description_tips">找齐徐峥 启动能量</p>');
+	 														$(".wrap").append($p);
+	 														$p.fadeIn();
+	 														$arrow=$('<img src="Images/page_arrowUp.png" alt="" class="descirption_arrow">');
+	 														$(".wrap").append($arrow);
+	 														$arrow.fadeIn(function(){
+																 	//下箭头上下移动
+ 																	TweenMax.to($(".descirption_arrow"), 1, {y:10, repeat:-1, yoyo:true});
+ 				 														
+	 														});
+	 														//当箭头点击的时候切换到第一关页面
+	 														$arrow.on("click",function(){
+ 																		$(".wrap").fadeOut(function(){
+ 																			$("#wrap").removeClass("description").addClass("game");
+ 																			$("img").remove();
+ 																			$(".description_tips").remove();
+ 																			$("#wrap").fadeIn(function(){
+ 																				//创建第一关
+ 																				createLevel(1);
+ 																			});
+ 																		});
+ 																});	
+	 														//当箭头滑动的时候切换页面
+	 														$arrow.on("touchstart",function(e){
+	 															var startPoint=e.originalEvent.touches[0];
+	 															document.addEventListener("touchmove",eDefault,false);
+	 															$arrow.on("touchend",function(e){
+	 																var endPoint=e.originalEvent.changedTouches[0];
+	 																change=endPoint.clientY-startPoint.clientY;
+	 																if(Math.abs(change)>10){
+	 																	document.removeEventListener("touchmove",eDefault,false);
+ 																		$(".wrap").slideUp(function(){
+ 																			$("#wrap").removeClass("description").addClass("game");
+ 																			$("img").remove();
+ 																			$(".description_tips").remove();
+ 																			$("#wrap").slideDown(function(){
+ 																				//创建第一关
+ 																				createLevel(1);
+ 																			});
+ 																		});	 																	
+	 																}
+	 															})
+	 														})
+	 													},1500);
+	 											},2000);
+	 										},2500);
+	 								},500);
+	 						},1500);
+	 
+	 				},15500);
+	 			}
+	 		}
+	 	}
+	 }
+ 	imgLoad();
+
+ 	function eDefault(e){
+ 		e.preventDefault();
+ 	}
+
+
+
+	//第二个页面创建动画元素
+ 	function createEle(){
+ 		$(".wrap").html('<div class="description_text">'+
+'<pre>'+
+'公元9025年'+'<br/>'+
+'外星人为了争夺'+'<br/>'+
+'封印在vivo手机中的神秘能量'+'<br/>'+
+'发起宇宙战乱'+'<br/>'+
+'超人徐峥为了保卫神秘能量'+'<br/>'+
+'带着手机来到浩瀚宇宙中'+'<br/>'+
+'分身成为8个自己'+'<br/>'+
+'分别保卫8块手机碎片'+'<br/>'+
+'消失在太阳系的八大行星中'+'<br/>'+
+'据说找齐徐峥的8个分身'+'<br/>'+
+'就能启动神秘能量保护地球'+'<br/>'+
+'...</pre>'+
+		'</div>'+
+		'<img src="Images/page_description_meteor1.png" alt="meteor1" class="meteor1 animateMtr1">'+
+		'<img src="Images/page_description_meteor2.png" alt="meteor2" class="meteor2 animateMtr2">'+
+		'<img src="Images/page_description_meteor3.png" alt="meteor3" class="meteor3 animateMtr3">'+
+		'<img src="Images/page_description_meteor4.png" alt="meteor4" class="meteor4">'+
+		'<img src="Images/page_description_xuzheng.png" alt="" class="superman">');
+ 	}
+
+
+	 //超人飞翔动态动画
+	function animateSuperman(){
+  		var Flyingflag=true;//超人徐峥切换图片
+		function supermanFlying(){
+			if(Flyingflag){
+				$(".superman").attr("src","Images/page_description_xuzheng.png");
+			}else{
+				$(".superman").attr("src","Images/page_description_xuzheng1.png");
+			}
+			Flyingflag=!Flyingflag;
+		}
+		setInterval(supermanFlying,500);			
+	}
+	</script>
+</body>
+</html>

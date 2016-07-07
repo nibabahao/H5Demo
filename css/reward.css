@@ -1,0 +1,247 @@
+.reward{
+	background: url("../Images/page_description_bg.png") no-repeat 0,0;
+    background-size:100% 100%;
+}
+.reward1{
+	background: url("../Images/page_reward_feeback.png") no-repeat 0,0;
+    background-size:100% 100%;	
+}
+.reward2{
+	background: url("../Images/page_reward_feeback2.png") no-repeat 0,0;
+    background-size:100% 100%;	
+}
+.reward3{
+	background: url("../Images/page_reward_feeback1.png") no-repeat 0,0;
+    background-size:100% 100%;	
+}
+.rewardExplan{
+	background: url("../Images/page_reward_feeback3.png") no-repeat 0,0;
+    background-size:100% 100%;	
+}
+.reward  .reward_title{
+	color: white;
+	text-align: center;
+	font-size: 1.6rem;
+	line-height: 1.25;
+	margin-top: 5.2140625%;
+	overflow: hidden;
+	opacity: 0;
+	-webkit-animation:rewardtitle 2s linear .5s forwards;
+}
+.reward_frage{
+	position: absolute;
+}
+.frageWrap{
+	position: absolute;
+	padding-top:115.5625%;
+	width: 58.03125%;
+	left: 50%;
+	top:50%;
+	margin-top: -57.78125%;
+	margin-left: -28.515625%;
+}
+.fragement{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top:0;
+
+}
+
+
+.reward_wholeMobile{
+	position: absolute;
+	left: 50%;
+	top:50%;
+	width: 61.09375%;
+	margin-left: -30.546875%;
+	margin-top: -59.921874999%;
+	display: none;
+}
+
+/***********所有手机碎片*********/
+.fragement .reward_frage1{
+	width: 62.89082530271331%;
+	left: -100%;
+	top:-50%;
+	-webkit-animation:rewardfrage1 1.5s ease-out forwards 2.5s;
+}
+.fragement .reward_frage2{
+	width: 57.82121322272215%;
+	right: -100%;
+	top:-50%;
+	-webkit-animation:rewardfrage2 1.5s ease-out forwards 2.5s;
+}
+.fragement .reward_frage3{
+	width: 68.12227544555468%;
+	right: -110%;
+	top:50%;
+	-webkit-animation:rewardfrage3 1.5s ease-out forwards 2.5s;	
+}
+.fragement .reward_frage4{
+	width: 52.7053111141627%;
+	left: -100%;
+	top:50%;
+	-webkit-animation:rewardfrage4 1.5s ease-out forwards 2.5s;		
+}
+.fragement .reward_frage5{
+	width: 50.9198906273981%;
+	left: -100%;
+	top:26.39770333453216%;
+	-webkit-animation:rewardfrage5 1.5s linear forwards 2.5s;
+}
+.fragement .reward_frage6{
+	width: 46.81237698274864%;
+	right: -100%;
+	top:97.72888909320519%;
+	-webkit-animation:rewardfrage6 1.5s ease-out forwards 2.5s;	
+}
+.fragement .reward_frage7{
+	width: 52.5053111141627%;
+	left: -100%;
+	top:116.72888909320519%;
+	-webkit-animation:rewardfrage7 1.5s ease-out forwards 2.5s;	
+}
+
+.fragement .reward_frage8{
+	width: 71.00708148555026%;
+	right: -100%;
+	top:126.72888909320519%;
+	-webkit-animation:rewardfrage8 1.5s ease-out forwards 2.5s;		
+}
+.page_btn{
+	width: 57.5%;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	margin-left: -28.75%;
+	margin-top: -58.125%;
+}
+.page_btn img{
+	width:100%;
+}
+button{
+	position: absolute;
+	left: 50%;
+	margin-left: -36.41304347826087%;
+	background-color:transparent;
+	color:#58bedd;
+	width: 72.82608695652174%;
+	height: 7.258%;
+	border:1px solid #6c99a7;
+	border-radius:12px;
+	top: 68.41397849462365%;
+	font-size:2.5rem;
+}
+button:nth-of-type(2){
+	top:78.36021505376344%;
+}
+
+
+
+
+
+
+/**********部分动画效果************/
+/*文字动画*/
+@-webkit-keyframes rewardtitle{
+	0%{
+		opacity: 0;
+	}
+	25%{
+		opacity: 0.25;
+	}
+	50%{
+		opacity: 0.5;
+	}
+	75%{
+		opacity: 0.75;
+	}	
+	100%{
+		opacity: 1;
+	}
+}
+
+
+/*******碎片效果*********/
+@-webkit-keyframes rewardfrage1{
+	0%{
+		left: -100%;
+		top:-50%;
+	}
+	100%{
+		left: 0;
+		top:0;
+	}
+}
+@-webkit-keyframes rewardfrage2{
+	0%{
+		right: -100%;
+		top:-50%;
+	}
+	100%{
+		right: 0;
+		top:0;
+	}
+}
+@-webkit-keyframes rewardfrage3{
+	0%{
+		right: -100%;
+		top:50%;
+	}
+	100%{
+		right: 0;
+		top:13.11530380181559%;
+	}
+}	
+@-webkit-keyframes rewardfrage4{
+	0%{
+		left: -100%;
+		top:50%;
+	}
+	100%{
+		left: 0;
+		top:26.889770333453216%;
+	}
+}
+@-webkit-keyframes rewardfrage5{
+	0%{
+		left: -100%;
+		top:26.39770333453216%;
+	}
+	100%{
+		left: 30.695412651356657%;
+		top:26.39770333453216%;
+	}
+}
+@-webkit-keyframes rewardfrage6{
+	0%{
+	right: -100%;
+	top:97.72888909320519%;
+	}
+	100%{
+	right: 0%;
+	top:47.72888909320519%;
+	}
+}
+@-webkit-keyframes rewardfrage7{
+	0%{
+	left: -100%;
+	top:116.72888909320519%;
+	}
+	100%{
+	left: 0%;
+	top:66.95256559680041%;
+	}
+}
+@-webkit-keyframes rewardfrage8{
+	0%{
+	right: -120%;
+	top:156.72888909320519%;
+	}
+	100%{
+	right: 0%;
+	top:76.72284577754822%;
+	}
+}

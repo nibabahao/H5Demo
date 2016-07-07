@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#block{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="block"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/TweenMax.min.js"></script>
+	<script type="text/javascript">
+		TweenLite.to($("#block"), 2, {backgroundColor:"#ff0000", width:"50%", top:"100px", ease:Power2.linear}); 
+		// TweenLite.to($("#block"), 2, {boxShadow:"0px 0px 20px red", color:"#FC0"});
+		var tl = new TimelineLite();
+		// Sequence multiple tweens
+		tl.to($("#block"), 1, {x:50,y:0}) .to($("#block"), 1, {x:50,y:50}) .to($("#block"), 1, {x:-50,y:50}) .to($("#block"), 1, {x:-50,y:0});
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+@-webkit-keyframes game_content{
+	0%{
+		margin-top: -126.5625%;
+	}
+	100%{
+		margin-top: 10.8125%; 
+	}
+}
+@-webkit-keyframes game_star0{
+	0%{
+		top:80%;
+		left: 10%;
+	}
+	20%{
+		top:82%;
+		left: 12%;
+	}
+	40%{
+		top:80%;
+		left: 10%;		
+	}
+	60%{
+		top:78%;
+		left: 8%;
+	}
+	80%{
+		top:82%;
+		left: 12%;		
+	}
+	100%{
+		top:80%;
+		left: 10%;
+	}	
+}
+@-webkit-keyframes game_star1{
+	0%{
+		top:80%;
+		left: 80%;
+	}
+	20%{
+		top:78%;
+		left:78%;
+	}
+	40%{
+		top:80%;
+		left: 80%;		
+	}
+	60%{
+		top:82%;
+		left: 82%;	
+	}
+	80%{
+		top:78%;
+		left:78%;
+	}
+	100%{
+		top:80%;
+		left: 80%;
+	}	
+}

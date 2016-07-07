@@ -1,0 +1,248 @@
+/*文字动画*/
+@-webkit-keyframes desText{
+	0%{
+		height: 0;
+	}
+	8%{
+		height: 8.33333%;
+	}
+	16%{
+		height: 16.6666%;
+	}
+	24%{
+		height: 25%;
+	}
+	32%{
+		height: 33.3333%;
+	}
+	40%{
+		height: 41.66666%;
+	}
+	48%{
+		height: 50%;
+	}
+	56%{
+		height: 58.33333%;
+	}
+	64%{
+		height: 66.66666%;
+	}
+	72%{
+		height: 75%;
+	}
+	80%{
+		height: 83.3333%;
+	}
+	88%{
+		height: 91.6666%;
+	}
+	100%{
+		height: 100%;
+	}
+}
+/*流星1运动轨迹*/
+@-webkit-keyframes meteor1{
+	0%{
+		left:16.40625%;
+		margin-top:31.71875%;
+	}
+	20%{
+		left:18.40625%;
+		margin-top:33.71875%;
+	}
+	40%{
+		left:16.40625%;
+		margin-top:31.71875%;
+	}
+	60%{
+		left:14.40625%;
+		margin-top:29.71875%;
+	}
+	80%{
+		left:18.40625%;
+		margin-top:33.71875%;
+	}	
+	100%{
+		left:16.40625%;
+		margin-top:31.71875%;
+	}			
+}
+/*流星2运动轨迹*/
+@-webkit-keyframes meteor2{
+	0%{
+		left:51.40625%;
+		margin-top:130.625%;
+	}
+	20%{
+		left:49.40625%;
+		margin-top:128.625%;		
+	}
+	40%{
+		left:51.40625%;
+		margin-top:130.625%;
+	}
+	60%{
+		left:53.40625%;
+		margin-top:132.625%;
+	}
+	80%{
+		left:49.40625%;
+		margin-top:128.625%;
+	}	
+	100%{
+		left:51.40625%;
+		margin-top:130.625%;
+	}			
+}
+/*流星3运动轨迹*/
+@-webkit-keyframes meteor3{
+	0%{
+		margin-top:35.625%;
+		left:66.5625%;
+	}
+	20%{
+		margin-top:34.625%;
+		left:65.5625%;		
+	}
+	40%{
+		margin-top:35.625%;
+		left:66.5625%;
+	}
+	60%{
+		margin-top:37.625%;
+		left:68.5625%;
+	}
+	80%{
+		margin-top:34.625%;
+		left:65.5625%;
+	}	
+	100%{
+		margin-top:35.625%;
+		left:66.5625%;
+	}			
+}
+@-webkit-keyframes meteor4{
+	0%{
+		left:25.5625%;
+		margin-top:110.625%;
+	}
+	20%{
+		left:27.5625%;
+		margin-top:117.625%;	
+	}
+	40%{
+		left:25.5625%;
+		margin-top:110.625%;
+	}
+	60%{
+		left:23.5625%;
+		margin-top:107.625%;
+	}
+	80%{
+		left:27.5625%;
+		margin-top:117.625%;	
+	}	
+	100%{
+		left:25.5625%;
+		margin-top:110.625%;
+	}
+}
+/*流星1突变运动轨迹*/
+@-webkit-keyframes meteorflying1{
+	0%{
+		left:16.40625%;
+		margin-top:31.71875%;
+	}
+	100%{
+		margin-top:45.625%;
+		left:72.5625%;		
+	}
+}
+/*流星4运动轨迹*/
+@-webkit-keyframes meteorflying4{
+	0%{
+		left:-15.46875%;
+		margin-top:135.625%;
+	}
+	100%{
+		left:25.5625%;	
+		margin-top:110.625%;
+	}
+}
+/*流星1飞行完*/
+@-webkit-keyframes meteorFlyAfter1{
+0%{
+		margin-top:45.625%;
+		left:72.5625%;	
+	}
+	20%{
+		margin-top:47.625%;
+		left:74.5625%;	
+	}
+	40%{
+		margin-top:45.625%;
+		left:72.5625%;	
+	}
+	60%{
+		margin-top:43.625%;
+		left:70.5625%;	
+	}
+	80%{
+		margin-top:47.625%;
+		left:74.5625%;	
+	}	
+	100%{
+		margin-top:45.625%;
+		left:72.5625%;	
+	}					
+}
+
+
+
+/*超人徐峥动画*/
+@-webkit-keyframes superFlying{
+	0{
+		top:60%;
+		left: 141%;
+	}
+	20%{
+		top:55%;
+		left: 100%;
+	}
+	40%{
+		top:50%;
+		left: 50%;
+	}
+	60%{
+		top:50%;
+		left: 50%;
+	}
+	80%{
+		top:45%;
+		left: 0%;
+	}
+	100%{
+		top:40%;
+		left: -41%;
+	}
+}
+/*******************手机旋转动画*************/
+@-webkit-keyframes mobileRotate{
+	0%{
+		transform: scale(0) rotate(0deg);
+		opacity: 0;
+	}
+	100%{
+		transform: scale(1) rotate(720deg);
+		opacity: 1;
+	}
+}
+@-webkit-keyframes mobileFadeOut{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
