@@ -13,7 +13,7 @@
 	margin-top: -126.5625%;
 	position: relative;
 	text-align: center;
-	-webkit-animation:game_content 1s linear forwards .5s;
+	/*-webkit-animation:game_content 1s linear forwards .5s;*/
 	z-index: 5;
 }
 .game .game_content .container{

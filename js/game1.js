@@ -28,6 +28,7 @@ Game.prototype.CreateEle=function () {
 		'<img src="Images/page_game'+this.num+'_star1.png" class="game'+this.num+'_star0 str0_animate">'+
 		'<img src="Images/page_game1_star.png" class="game1_star1 str1_animate">'
 		);
+	new TimelineLite().to($(".game_content"),1,{marginTop:vW*0.108125},"+=0.5");
 }
 //创建当前关卡的相应元素
 Game.prototype.CreateMianEle=function(){
@@ -222,5 +223,4 @@ function explan(){
 	wheelScrollTop.setScroll();
 	wheelScrollTop.touchScroll();
 	wheelScrollTop.dragScroll();
-
 }
