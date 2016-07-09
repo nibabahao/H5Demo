@@ -85,7 +85,7 @@ background: #383838;
 	margin-left: -167.508px;
 	height: 0;
 	overflow: hidden;
-	-webkit-animation: desText 10s linear forwards;
+	/*-webkit-animation: desText 10s linear forwards;*/
 	z-index: 2;
 	-webkit-transition: opacity .5s linear;
 }

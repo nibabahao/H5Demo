@@ -25,8 +25,8 @@
 	 //第一页的所用图片资源
 	 var pageFirstArr=["Images/page_load_xufeng1.png","Images/page_load_text.png","Images/page_load_bg.png","Images/page_description_bg.png","Images/page_description_meteor1.png","Images/page_description_meteor2.png","Images/page_description_meteor3.png","Images/page_description_meteor4.png","Images/page_description_xuzheng.png","Images/page_description_xuzheng1.png","Images/page_description_mobile1.png","Images/page_description_mobile0.png","Images/fpage_ragement0.png","Images/fpage_ragement1.png","Images/fpage_ragement2.png","Images/fpage_ragement3.png","Images/fpage_ragement4.png","Images/fpage_ragement5.png","Images/fpage_ragement7.png","Images/page_start0.png","Images/page_start1.png","Images/page_start2.png","Images/page_start3.png","Images/page_start4.png","Images/page_start5.png","Images/page_start6.png","Images/page_start7.png","Images/page_arrowUp.png","Images/page_gameBg.png","Images/page_game1_title.png","Images/page_gameHead1.png","Images/page_gameHead.png","Images/page_game1_star.png","Images/page_game1_star1.png","Images/page_game1_alert.png","Images/page_game2_star1.png","Images/page_game2_title.png","Images/page_game2_alert.png","Images/page_game3_title.png","Images/page_game3_star1.png","Images/page_game3_alert.png","Images/page_game4_star1.png","Images/page_game4_title.png","Images/page_game4_alert.png","Images/page_game5_title.png","Images/page_gameHead2.png","Images/page_game5_star1.png","Images/page_game5_star2.png","Images/page_game5_alert.png","Images/page_game6_title.png","Images/page_game6_star1.png","Images/page_game6_star2.png","Images/page_game6_alert.png","Images/page_game7_title.png","Images/page_game7_star1.png","Images/page_game7_star2.png","Images/page_game7_star3.png","Images/page_game7_alert.png","Images/page_game8_title.png","Images/page_game8_star1.png","Images/page_game8_star2.png","Images/page_game8_alert.png","Images/page_game3_star2.png","Images/page_reward_mobile2.png","Images/page_reward_feeback.png","Images/page_reward_feeback1.png","Images/page_reward_feeback2.png","Images/page_reward_feeback3.png"];
 	 //视口宽度高度
-	 vW=document.documentElement.clientWidth;
-	 vH=document.documentElement.clientHeight;
+	 vW=$(".wrap").width();
+	 vH=$(".wrap").height();
 	  // 图片预加载
 	 function imgLoad(){
 	 	var srcSum=0;
@@ -40,6 +40,8 @@
 	 				$(".textPic").remove();
 	 				$(".wrap").removeClass("loading").addClass("description");
 	 				createEle();
+	 				var textPre=new TimelineLite();
+	 				textPre.to($("pre"),0.83,{height:$(".description_text").height()*0.0833333}).to($("pre"),0.83,{height:$(".description_text").height()*0.166666}).to($("pre"),0.83,{height:$(".description_text").height()*0.25}).to($("pre"),0.83,{height:$(".description_text").height()*0.333333}).to($("pre"),0.83,{height:$(".description_text").height()*0.4166666}).to($("pre"),0.83,{height:$(".description_text").height()*0.5}).to($("pre"),0.83,{height:$(".description_text").height()*0.5833333}).to($("pre"),0.83,{height:$(".description_text").height()*0.6666666}).to($("pre"),0.83,{height:$(".description_text").height()*0.75}).to($("pre"),0.83,{height:$(".description_text").height()*0.833333}).to($("pre"),0.83,{height:$(".description_text").height()*0.916666}).to($("pre"),0.83,{height:$(".description_text").height()});
 	 				//10秒后文字全部出现所有元素动画构建
 	 				setTimeout(function(){
 	 					$(".description_text pre").css({
@@ -48,7 +50,7 @@
 	 					$(".meteor1").removeClass("animateMtr1");
 	 					var t1 = new TimelineLite();
 	 					t1.to($(".meteor1"),2,{left:(vW*0.725625),marginTop:(vW*0.45625)});
-	 					t1.to($(".meteor4"),2,{left:(vW*0.255625),marginTop:(vW*1.10625)});
+	 					new TimelineLite().to($(".meteor4"),2,{left:(vW*0.255625),marginTop:(vW*1.10625)});
 	 					// $(".meteor4").addClass("animateMtr4");
 	 					var tl = new TimelineLite();
 	 					tl.to($(".superman"),1,{left:(vW),top:(vH*0.55)}).to($(".superman"),1,{left:(vW*0.5),top:(vH*0.5)}).to($(".superman"),1,{left:0,top:(vH*0.45)},"+=2").to($(".superman"),1,{left:(vW*-0.41),top:(vH*0.4)});
