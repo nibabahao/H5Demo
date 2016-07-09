@@ -45,8 +45,11 @@
 	 					$(".description_text pre").css({
 	 						"opacity":0
 	 					});
-	 					$(".meteor1").removeClass("animateMtr1").addClass("meteorflying1");
-	 					$(".meteor4").addClass("animateMtr4");
+	 					$(".meteor1").removeClass("animateMtr1");
+	 					var t1 = new TimelineLite();
+	 					t1.to($(".meteor1"),2,{left:(vW*0.725625),marginTop:(vW*0.45625)});
+	 					t1.to($(".meteor4"),2,{left:(vW*0.255625),marginTop:(vW*1.10625)});
+	 					// $(".meteor4").addClass("animateMtr4");
 	 					var tl = new TimelineLite();
 	 					tl.to($(".superman"),1,{left:(vW),top:(vH*0.55)}).to($(".superman"),1,{left:(vW*0.5),top:(vH*0.5)}).to($(".superman"),1,{left:0,top:(vH*0.45)},"+=2").to($(".superman"),1,{left:(vW*-0.41),top:(vH*0.4)});
 	 					animateSuperman();
