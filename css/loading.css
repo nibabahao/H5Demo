@@ -57,10 +57,10 @@ background: #383838;
 /*loading动画*/
 @-webkit-keyframes loading{
 	0%{
-		-webkit-transform:rotate(0deg);
+		-webkit-transform:rotate(0,0,0);
 	}
 	100%{
-		-webkit-transform: rotate(-360deg);
+		-webkit-transform: rotate(-360deg,0,0);
 	}
 }
 /***description****/

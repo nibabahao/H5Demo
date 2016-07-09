@@ -2,7 +2,7 @@
 ***	num为当前关卡数
 ****Titlesrc为当前关卡的标题图片路径
 ***/
-
+var timefage=false;//标记是否过了八关
 function Game(num,Titlesrc){
 	this.num=num;
 	this.Titlesrc=Titlesrc;
@@ -61,7 +61,6 @@ Game.prototype.CreateMianEle=function(){
 			imgNum=rnd(0,n+1*n+1);
 		}
 	}
-		console.log(imgNum);
 	for(var i=0;i<len;i++){
 		var img=new Image();
 		//当等于徐峥随机数时换成头像
@@ -77,6 +76,7 @@ Game.prototype.CreateMianEle=function(){
 				$imgAlert.appendTo($("#wrap")).delay(1000).fadeOut(function(){
 					n++;
 					if(n==9){
+						timefage=true;
 						$("#wrap").removeClass("game").addClass("reward");
 						$("#wrap").html('<p class="reward_title">'+
 				'旺德福<br/>你已集齐徐铮分身<br/>vivo X5pro碎片开始合体<br/>合体中<br/>...'+
@@ -101,6 +101,9 @@ Game.prototype.CreateMianEle=function(){
 													'<button>开始抽奖</button>'+
 													'<button>游戏说明</button>'+
 											 '</div>');
+							$("button").eq(1).on("click",function(){
+									explan();
+								});
 							$("button").eq(0).on("click",function(){
 								$("#wrap").html("");
 								var num=rnd=(0,10);
@@ -110,13 +113,16 @@ Game.prototype.CreateMianEle=function(){
 														'<input type="text" placeholder="姓名" class="name">'+
 														'</form>');
 									$(".wrap").removeClass("reward").addClass("reward2");
+									$button=$("<button class='game_submit'></button>");
+									$button.appendTo($(".wrap"));
+									$button.on("click",function(){alert("提交成功")});
 								}else{
 									$(".wrap").removeClass("reward").addClass("reward1");
+									$button=$("<button class='game_back'></button>");
+									$button.appendTo($(".wrap"));
+									$button.on("click",gameBack);
+
 								}
-							});
-							$("button").eq(1).on("click",function(){
-								$("#wrap").html("");
-								$(".wrap").removeClass("reward").addClass("rewardExplan");
 							});
 							},1500);
 						});
@@ -145,15 +151,23 @@ Game.prototype.CreateMianEle=function(){
 		}
 }
 /***********************************************************时间刷新更新**************/
-Game.prototype.time_out=function(){
+var time_out=function(){
 var text=61.50;
 var time=setInterval(function(){
 	text-=0.1;
+	if(timefage){
+		clearInterval(time);
+	}
 	if(text<=0){
 		text=0;	
 		clearInterval(time);
-		$("#wrap").html("");
+		$("#wrap").html('<button class="tryAgain"></button>'+
+			'<button class="gameDecription"></button>');
 		$(".wrap").removeClass("reward").addClass("reward3");
+		$(".tryAgain").click(gameBack);
+		$(".gameDecription").click(function(){
+			explan();
+		});
 	}
 	$(".game_time").html(text.toFixed(1));
 },100);
@@ -164,9 +178,49 @@ function createLevel(n){
  var gm=new Game(n,"Images/page_game"+n+"_title.png");
 	 gm.CreateEle();
 	 gm.CreateMianEle();
-	 gm.time_out();
 }
 
+//***********************************************返回游戏
+function gameBack(){
+	$(".wrap").removeClass("reward1 reward3").addClass("game");
+	createLevel(1);
+}
+//**************************************游戏说明
+function explan(){
+	$("#wrap").removeClass("reward");
+	$("#wrap").html('<div class="rewardExplan">'+
+		'<div class="explan_detail">'+
+				'<dl>'+
+					'<dt>游戏规则:</dt>'+
+					'<dd>'+
+						'<ol>'+
+							'<li>1. 玩家要在规定时间内，依次从2*2至7*7的方格中找徐铮。点对徐铮，即可过关。</li>'+
+							'<li>2. 每找到一个徐铮，得到一个vivo手机“碎片”。集齐8块“碎片”，即获得一次抽奖机会。</li>'+
+							'<li>3. 中奖玩家请正确填写信息。信息填写错误或未填写的玩家将被取消中奖资格。</li>'+
+							'<li>4. 每个ID只有一次中奖机会。</li>'+
+							'<li>5. 恶意刷奖的玩家一经发现将取消抽奖资格</li>'+
+						'</ol>'+
+					'</dd>'+
+					'<dt>活动时间:</dt>'+
+					'<dd>2015年9月28日至10月2日</dd>'+
+					'<dt>游戏奖励</dt>'+
+					'<dd>一等奖:vivo X5Pro智能手机 2台</dd>'+
+					'<dd>二等奖:vivo 充电宝 10个</dd>'+
+					'<dd>三等奖:没有</dd>'+
+				'</dl>'+
+			'</div>'+
+			'<div class="sliderBar">'+	
+				'<div class="slider"></div>'+
+			'</div>'+
+		'</div>');
+	$(".rewardExplan").fadeIn();
+	var slider=$(".slider").get(0);
+	var explan_detail=$(".explan_detail").get(0);
+	var sliderBar=$(".sliderBar").get(0);
+	var content=$(".explan_detail dl").get(0);
+	var wheelScrollTop=new WheelScrollTop(explan_detail,slider,content);
+	wheelScrollTop.setScroll();
+	wheelScrollTop.touchScroll();
+	wheelScrollTop.dragScroll();
 
-
-
+}

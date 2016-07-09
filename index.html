@@ -20,6 +20,7 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/TweenMax.min.js"></script>
 	<script type="text/javascript" src="js/game1.js"></script>
+	<script type="text/javascript" src="js/scrollWheel1.js"></script>
 	<script type="text/javascript">
 	 //第一页的所用图片资源
 	 var pageFirstArr=["Images/page_load_xufeng1.png","Images/page_load_text.png","Images/page_load_bg.png","Images/page_description_bg.png","Images/page_description_meteor1.png","Images/page_description_meteor2.png","Images/page_description_meteor3.png","Images/page_description_meteor4.png","Images/page_description_xuzheng.png","Images/page_description_xuzheng1.png","Images/page_description_mobile1.png","Images/page_description_mobile0.png","Images/fpage_ragement0.png","Images/fpage_ragement1.png","Images/fpage_ragement2.png","Images/fpage_ragement3.png","Images/fpage_ragement4.png","Images/fpage_ragement5.png","Images/fpage_ragement7.png","Images/page_start0.png","Images/page_start1.png","Images/page_start2.png","Images/page_start3.png","Images/page_start4.png","Images/page_start5.png","Images/page_start6.png","Images/page_start7.png","Images/page_arrowUp.png","Images/page_gameBg.png","Images/page_game1_title.png","Images/page_gameHead1.png","Images/page_gameHead.png","Images/page_game1_star.png","Images/page_game1_star1.png","Images/page_game1_alert.png","Images/page_game2_star1.png","Images/page_game2_title.png","Images/page_game2_alert.png","Images/page_game3_title.png","Images/page_game3_star1.png","Images/page_game3_alert.png","Images/page_game4_star1.png","Images/page_game4_title.png","Images/page_game4_alert.png","Images/page_game5_title.png","Images/page_gameHead2.png","Images/page_game5_star1.png","Images/page_game5_star2.png","Images/page_game5_alert.png","Images/page_game6_title.png","Images/page_game6_star1.png","Images/page_game6_star2.png","Images/page_game6_alert.png","Images/page_game7_title.png","Images/page_game7_star1.png","Images/page_game7_star2.png","Images/page_game7_star3.png","Images/page_game7_alert.png","Images/page_game8_title.png","Images/page_game8_star1.png","Images/page_game8_star2.png","Images/page_game8_alert.png","Images/page_game3_star2.png","Images/page_reward_mobile2.png","Images/page_reward_feeback.png","Images/page_reward_feeback1.png","Images/page_reward_feeback2.png","Images/page_reward_feeback3.png"];
@@ -33,7 +34,7 @@
 	 		img.src=pageFirstArr[i];
 	 		img.onload=function(){
 	 			srcSum++;
-	 			if(srcSum==pageFirstArr.length){
+	 			if(srcSum==pageFirstArr.length/2){
 	 				$(".Hpic").remove();
 	 				$(".textPic").remove();
 	 				$(".wrap").removeClass("loading").addClass("description");
@@ -110,7 +111,9 @@
  																			$(".description_tips").remove();
  																			$("#wrap").fadeIn(function(){
  																				//创建第一关
+ 																				time_out();
  																				createLevel(1);
+ 																				
  																			});
  																		});
  																});	
@@ -146,7 +149,8 @@
 	 		}
 	 	}
 	 }
- 	imgLoad();
+ imgLoad();
+	
 
  	function eDefault(e){
  		e.preventDefault();
